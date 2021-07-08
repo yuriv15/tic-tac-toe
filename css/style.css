@@ -13,12 +13,17 @@ body{
     margin-top: 5vh;
 }
 
-h1{
+h1, p, a{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+p{
+    margin-top: 3vh;
+}
+
 #grid-container{
+    margin-top: 3vh;
     display: grid;
     gap: 2px;
     grid-template: 100px 100px 100px / 100px 100px 100px;
