@@ -36,11 +36,16 @@ function updateSquares() {
     squares.forEach((square) => {
         let position = square.id;
         let symbol = board[position]
-
-        if (symbol != '') {
-            square.innerHTML = `<div class = '${symbol}'></div>`;
-        }
-
+        square.innerHTML = '';
     })
 
 }
+
+let restart = document.getElementById("restart-button");
+
+restart.addEventListener('click', () => {
+    board = ['', '', '', '', '', '', '', '', ''];
+    playerTime = 0;
+    gameOver = false;
+    updateSquares();
+})
