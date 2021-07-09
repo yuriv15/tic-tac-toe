@@ -30,6 +30,10 @@ function handleClick(event) {
             alert ("Player " + (playerTime+1) + " won!");
         }, 10);
         
+    } else if(handleMove(position) && draw){
+        setTimeout(() => {
+            alert ("It's a draw!");
+        }, 10);
     };
     updateSquare(position);
 
@@ -57,6 +61,7 @@ restart.addEventListener('click', () => {
     board = ['', '', '', '', '', '', '', '', ''];
     playerTime = 0;
     gameOver = false;
+    draw = false;
     updateSquares();
 })
 

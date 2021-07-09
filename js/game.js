@@ -16,10 +16,17 @@ let winStates = [
     [2, 4, 6],
 ]
 
+let draw = false;
+
 function handleMove(position) {
 
     if (gameOver) {
         return;
+    }
+
+    if (draw) {
+        gameOver = draw;
+        return gameOver;
     }
 
     if (board[position] == '') {
@@ -59,6 +66,20 @@ function isWin() {
         }
 
     }
+
+        if (board[0] != ''
+            && board[1] != '' 
+            && board[2] != '' 
+            && board[3] != '' 
+            && board[4] != '' 
+            && board[5] != '' 
+            && board[6] != '' 
+            && board[7] != '' 
+            && board[8] != '') {
+                
+                draw = true;
+                
+         }
 
     return false;
 
