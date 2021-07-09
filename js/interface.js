@@ -27,7 +27,7 @@ function handleClick(event) {
             scoreP2.innerText = scoreP2Number;
         }
         setTimeout(() => {
-            alert ("O jogador " + (playerTime+1) + " venceu!");
+            alert ("Player " + (playerTime+1) + " won!");
         }, 10);
         
     };
@@ -46,8 +46,6 @@ function updateSquares() {
     let squares = document.querySelectorAll(".square")
 
     squares.forEach((square) => {
-        let position = square.id;
-        let symbol = board[position]
         square.innerHTML = '';
     })
 
@@ -60,4 +58,13 @@ restart.addEventListener('click', () => {
     playerTime = 0;
     gameOver = false;
     updateSquares();
+})
+
+let restartScore = document.getElementById("restart-score-button");
+
+restartScore.addEventListener('click', () => {
+    let scoreP1 = document.getElementById("score-p1");
+    let scoreP2 = document.getElementById("score-p2");
+    scoreP1.innerText = 0;
+    scoreP2.innerText = 0;
 })
